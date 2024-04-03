@@ -2,11 +2,9 @@
 
 ## What Is This Project About?
 
-The project aims to develop a script that generates an intuitive and interactive smart contract architecture map for any Solidity-based repository. The output will be in JSON format and saved as a `.excalidraw` file. Excalidraw is an open-source, interactive, and virtual whiteboard tool that has gained popularity for its integration into a variety of software platforms, including Visual Studio Code (VSC), Obsidian, CodeSandbox, Notion, and more.
+To generate intuitive architecture maps for any Solidity-based repository in `.excalidraw` and `.svg` formats. Excalidraw is an open-source, interactive, and virtual whiteboard tool that has gained popularity for its integration into a variety of software platforms, including Visual Studio Code (VSC), Obsidian, CodeSandbox, Notion, and more.
 
-### Project Goals
-
-The main goal is to produce diagrams similar to the examples below:
+We aim to produce diagrams similar to the below:
 
 - **Velvet Capital:** [View Example](https://github.com/cryptoTozer/examples/blob/main/velvet-capital.png)
 - **Autonolas / Olas:** [View Example](https://github.com/code-423n4/2023-12-autonolas/blob/main/registries/docs/On-chain_architecture_v6.png)
@@ -20,7 +18,7 @@ The main goal is to produce diagrams similar to the examples below:
 
 ### How It Works
 
-The script will accept a list of Solidity files as input, parse the code, and process the data to output an Excalidraw file. When opened in Excalidraw, this file will render to an architectural map of the given contracts.
+The script will accept a list of Solidity files as it's main input, and will then parse the code and process the data to output an Excalidraw file. When opened in Excalidraw, this file will render to an architectural map of the given contracts.
 
 ### Interactivity and Integration
 
@@ -36,7 +34,7 @@ This is a well-known problem for auditors, as highlighted by [Daniel from Guardi
 
 ## Why is the project important?
 
-Smart contract auditors need to gain an understanding of how a protocol works as quickly as possible. This process is time-sensitive because audits are almost always time-bound. Many auditors compete in time-bound audits of complex protocols multiple times a month. Therefore, accelerating the "context phase" of the audit is crucial. I know this from personal experience, having participated in various audits throughout 2023 and 2024.
+Smart contract auditors need to gain an understanding of how a protocol works as quickly as possible. This process is time-sensitive because audits are almost always time-bound. Many auditors compete in time-bound audits of complex protocols multiple times a month. Therefore, accelerating the "context phase" of the audit is crucial.
 
 Code maps are useful to auditors and users for a number of reasons:
 
@@ -45,11 +43,10 @@ Code maps are useful to auditors and users for a number of reasons:
 3. They are visually engaging, complementing the reading of docs and source code.
 4. They allow for quick re-contextualization after distractions, offering a high-level view not available from docs or code alone.
 5. Their importance increases with the complexity and size of the codebase.
-6. Beyond logic, great conceptual and technical diagrams also represent an art form.
-7. Beautifully designed code maps can serve as valuable marketing tools for the protocols themselves.
-8. Conceptual diagrams clarify the **what**—what a protocol does and the specific features it offers.
-9. Technical diagrams explain the **how**—how the protocol is architected, including external calls, entry-points, third-party integrations, and inheritance, as well as the workings of specific call flows.
-10. Comprehensive documentation caters to all learning styles—Visual, Read/Write, Auditory, and Kinesthetic. Code maps address the visual-spatial learning style.
+6. Well designed code maps can serve as valuable marketing tools for the protocols themselves.
+7. Conceptual diagrams clarify the **what**—what a protocol does and the specific features it offers.
+8. Technical diagrams explain the **how**—how the protocol is architected, including external calls, entry-points, third-party integrations, and inheritance, as well as the workings of specific call flows.
+9. Comprehensive documentation caters to all learning styles—Visual, Read/Write, Auditory, and Kinesthetic. Code maps address the visual-spatial learning style.
 
 ## What Other Solutions Exist?
 
