@@ -6,7 +6,7 @@ To generate intuitive architecture maps for any Solidity-based repository in `.e
 
 We aim to produce diagrams similar to the below:
 
-- **Velvet Capital:** [View Example](https://github.com/cryptoTozer/examples/blob/main/velvet-capital.png)
+- **Velvet Capital:** [View Example](https://github.com/cryptoTozer/smart-contract-code-maps/blob/main/examples/velvet-capital.png)
 - **Autonolas / Olas:** [View Example](https://github.com/code-423n4/2023-12-autonolas/blob/main/registries/docs/On-chain_architecture_v6.png)
 
 ### Notable Features of the Output
@@ -60,8 +60,8 @@ One of the most similar tools to our project is **Surya** by Consensys, which is
 
 ### Comparing Outputs
 
-- **Consensys’ Solidity Visual Developer Output:** [View Surya Output Example](https://github.com/cryptoTozer/examples/blob/main/velvet-capital-surya.png)
-- **Excalidraw Architectural Map Protocol (Our Product):** [View Our Output Example](https://github.com/cryptoTozer/examples/blob/main/velvet-capital.png)
+- **Consensys’ Solidity Visual Developer Output:** [View Surya Output Example](https://github.com/cryptoTozer/smart-contract-code-maps/blob/main/examples/velvet-capital-surya.png)
+- **Excalidraw Architectural Map Protocol (Our Product):** [View Our Output Example](https://github.com/cryptoTozer/smart-contract-code-maps/blob/main/examples/velvet-capital.png)
 
 Our architectural map aims to provide more intuitive structuring and highlights important functions and entry points to the protocol, making it more useful for initial context.
 
