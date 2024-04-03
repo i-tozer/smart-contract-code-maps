@@ -1,0 +1,11 @@
+{
+  "name": "solidity-code-maps-experiment",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "author": "Ian Tozer <23465548+itzr@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@solidity-parser/parser": "^0.18.0"
+  }
+}
