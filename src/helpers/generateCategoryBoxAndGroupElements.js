@@ -1,5 +1,5 @@
 import { getFurthestElementLocation } from "./getFurthestElementLocation.js";
-import { CATEGORY_BOX_PADDING } from "../script.js";
+import { CATEGORY_BOX_PADDING } from "./../config/config.js";
 
 function generateCategoryBoxAndGroupElements(elements, categoryBoxId) {
     const furthestLeft = getFurthestElementLocation("LEFT", elements);

@@ -1,36 +1,38 @@
 
 function sortCategoriesByNestedLength(rootCategory) {
-    let categoriesByLength = {};
     let sortedCategories = [];
-
-    function traverse(currentCategory) {
-        // Avoid duplicating categories by using their names as keys
-        if (categoriesByLength[currentCategory.name]) return;
-
-        let length = currentCategory.categories.length;
-        if (!categoriesByLength[length]) {
-            categoriesByLength[length] = [];
+  
+    function findDeepestGroup(currentCategory, depth = 0) {
+      let deepestGroup = currentCategory;
+      let maxDepth = depth;
+  
+      currentCategory.categories.forEach(subCategory => {
+        const [subDeepestGroup, subMaxDepth] = findDeepestGroup(subCategory, depth + 1);
+        if (subMaxDepth > maxDepth) {
+          deepestGroup = subDeepestGroup;
+          maxDepth = subMaxDepth;
         }
-
-        categoriesByLength[length].push(currentCategory);
-
-        // Recursively process nested categories
-        currentCategory.categories.forEach(subCategory => traverse(subCategory));
+      });
+  
+      return [deepestGroup, maxDepth];
     }
-
-    // Start the traversal from the root category
+  
+    function traverse(currentCategory) {
+      if (sortedCategories.includes(currentCategory)) return;
+  
+      const [deepestGroup, maxDepth] = findDeepestGroup(currentCategory);
+      if (maxDepth > 0) {
+        traverse(deepestGroup);
+      }
+  
+      sortedCategories.push(currentCategory);
+      currentCategory.categories.forEach(subCategory => traverse(subCategory));
+    }
+  
     traverse(rootCategory);
-
-    // Sort the keys (lengths) to ensure processing order
-    Object.keys(categoriesByLength)
-        .sort((a, b) => a - b) // Sort numerically by the lengths of the categories arrays
-        .forEach(length => {
-            categoriesByLength[length].forEach(category => sortedCategories.push(category));
-        });
-
     return sortedCategories;
-}
-
+  }
+  
 export default sortCategoriesByNestedLength;
 
 

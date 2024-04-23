@@ -1,8 +1,5 @@
-import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import categorise from "./helpers/categorise.js";
-import sortCategoriesByNestedLength from "./helpers/sortCategoriesByNestedLength.js";
 import generateTextandTextBoxPairAt00 from "./helpers/generateTextandTextBoxPairAt00.js";
 import {
   Direction,
@@ -12,9 +9,15 @@ import repositionElement from "./helpers/repositionElement.js";
 import repositionCategory from "./helpers/repositionCategory.js";
 import generateExcalidrawOutput from "./helpers/generateExcalidrawOutput.js";
 import generateCategoryBoxAndGroupElements from "./helpers/generateCategoryBoxAndGroupElements.js";
+import {
+  ELEMENT_SPACING,
+  CATEGORY_SPACING,
+} from "./config/config.js";
+import repositoryTraversal from "./modules/repositoryTraversal.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
 const contractsDir = path.join(
   __dirname,
   "protocols",
@@ -22,16 +25,7 @@ const contractsDir = path.join(
   "contracts"
 );
 
-const ELEMENT_SPACING = 10;
-const CATEGORY_SPACING = 10;
-const CATEGORY_BOX_PADDING = 50;
-const AVG_CHAR_LENGTH = 10;
-const TEXT_HEIGHT = 23;
-const BOX_HEIGHT = 60;
-const BOX_PADDING = 70;
-
-const categorisedDir = categorise(contractsDir);
-const sortedDir = sortCategoriesByNestedLength(categorisedDir);
+const sortedDir = repositoryTraversal(contractsDir);
 
 let allCategoryObjs = [];
 function generateCategoryElements(category) {
@@ -131,11 +125,3 @@ function generateCategoryBoxes(sortedDir) {
 const firstPaint = generateCategoryBoxes(sortedDir).flat();
 
 generateExcalidrawOutput(firstPaint, __dirname);
-
-export {
-  CATEGORY_BOX_PADDING,
-  AVG_CHAR_LENGTH,
-  TEXT_HEIGHT,
-  BOX_HEIGHT,
-  BOX_PADDING,
-};

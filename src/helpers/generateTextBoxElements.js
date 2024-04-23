@@ -1,4 +1,4 @@
-import { AVG_CHAR_LENGTH, TEXT_HEIGHT, BOX_HEIGHT, BOX_PADDING } from "../script.js";
+import { AVG_CHAR_LENGTH, TEXT_HEIGHT, BOX_HEIGHT, BOX_PADDING } from "./../config/config.js";
 
 function generateTextElement(id, text) {
   const width = text.length * AVG_CHAR_LENGTH;
